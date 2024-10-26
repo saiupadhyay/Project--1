@@ -44,42 +44,6 @@
 
 
     <script src="user-signup.js"></script>
-    
-    <!-- User Signup Page HTML -->
-<form id="signupForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <input type="password" id="password" placeholder="Your Password" required>
-    <input type="text" id="location" placeholder="Your Location" required>
-    <button type="submit">Sign Up</button>
-</form>
-
-<script>
-document.getElementById('signupForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const location = document.getElementById('location').value;
-
-    fetch('/signup-user', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, password, location }),
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert(data); // Show the result
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
-</script>
-
 </body>
 
 
